@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    android:gravity="center">
+    <TextView
+        android:id="@+id/malInfo_titre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textIsSelectable="true"
+        android:longClickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:fontFamily="@font/asap"
+        android:textSize="20sp"
+        android:textColor="@color/Gris"
+        android:text="-Symptome de maladie-" />
+
+    <TextView
+        android:id="@+id/malInfo_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textIsSelectable="true"
+        android:longClickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/asap"
+        android:textSize="16sp"
+        android:textColor="@color/VertFance"
+        android:text="-Symptome de maladie-Symptome de maladie-Symptome de maladie-Symptome de maladie-Symptome de maladie-Symptome de maladie-Symptome de maladie-Symptome de maladie-Symptome de maladie-" />
+
+</LinearLayout>

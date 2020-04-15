@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/VertBlanc"
+    tools:context=".Food.DetailRecetteActivity">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        >
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+
+            app:expandedTitleGravity="center"
+            android:gravity="center"
+            app:titleTextColor="@color/White"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.5"
+                android:gravity="center"
+                android:background="@color/VertBlanc"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:background="@color/VertFance"
+                    android:gravity="center"
+                    android:text="Doctor"
+                    android:textColor="@color/White"
+                    android:textSize="37sp"
+                    app:fontFamily="@font/sanchezz" />
+
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+
+                app:layout_collapseMode="pin"
+                />
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/VertBlanc"
+            android:text="@string/recetteDetail_recetteHint"
+            android:textColor="@color/Gris"
+            android:textSize="24sp"
+            />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="15dp">
+                <TextView
+                    android:id="@+id/detailRecette_titre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:longClickable="true"
+                    android:textIsSelectable="true"
+                    android:textSize="16sp"
+                    android:textColor="@color/VertFance"
+                    android:textAlignment="center"
+                    android:text="PASTA WITH GARLIC, SCALLIONS, CAULIFLOWER  BREAD CRUMBS"/>
+
+                <ImageView
+                    android:id="@+id/detailRecette_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/err_img"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="-15dp"
+                    android:layout_marginRight="-15dp"/>
+
+                <TextView
+                    android:id="@+id/detailRecette_resume"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:focusable="true"
+                    android:longClickable="true"
+                    android:textIsSelectable="true"
+                    android:textSize="14sp"
+                    android:textColor="@color/VertFance"
+                    android:text="I was stuck at home all day yesterday, while we were having some work done on the house (we were getting central air conditioning installed; I can't live on cold cucumber avocado soup all summer!). Because we'd been away for a few days beforehand, we didn't really have much in the way of food. So I had to throw something together from what we had on hand. I call it   That's how this pasta dish was born.
+
+Pasta and bread crumbs may sound a bit heavy to you. Actually, the bread crumbs are light and toasty and add a nice crunch. Plus, the cauliflower (you know I'm obsessed with this cruciferous delight) lends a non-carby element to balance this summery dish. I used frozen cauliflower, but feel free to use fresh. Just cut it into small pieces, so it'll cook through in the skillet; you may have to add a bit more liquid to cook it—use your judgement."/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="@color/VertFance"
+                    android:text="@string/recetteDetail_healthscore"/>
+
+                <TextView
+                    android:id="@+id/detailRecette_healthscore"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:focusable="true"
+                    android:longClickable="true"
+                    android:textIsSelectable="true"
+                    android:textSize="14sp"
+                    android:textColor="@color/VertFance"
+                    android:text="19.0"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="@color/VertFance"
+                    android:text="@string/recetteDetail_ready"/>
+                <TextView
+                    android:id="@+id/detailRecette_ready"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:longClickable="true"
+                    android:textIsSelectable="true"
+                    android:textSize="14sp"
+                    android:textColor="@color/VertFance"
+                    android:text="59.0 Min"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="@color/VertFance"
+                    android:text="@string/recetteDetail_ingr"/>
+
+                <TextView
+                    android:id="@+id/detailRecette_ingr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:focusable="true"
+                    android:longClickable="true"
+                    android:textIsSelectable="true"
+                    android:textSize="14sp"
+                    android:textColor="@color/VertFance"
+                    android:text="1T butter
+1/4 cup whole wheat bread crumbs (I used panko)
+about 2T grated cheese (I used romano)
+6-8 ounces pasta (I used linguine)
+1-2T extra virgin olive oil
+about 2 cups frozen cauliflower florets, thawed, cut into bite-sized pieces
+5-6 cloves garlic
+3 scallions, chopped, white and green parts separated
+2-3T white wine
+salt and pepper, to taste
+couple of pinches red pepper flakes, optional"/>
+
+
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+
+    </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

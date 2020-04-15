@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6F9A8D</color>
+    <color name="colorPrimaryDark">#1F6650</color>
+    <color name="colorAccent">#EAFBEA</color>
+
+    <color name="VertGris">#6F9A8D</color>
+    <color name="VertFance">#1F6650</color>
+    <color name="VertBlanc">#EAFBEA</color>
+
+    <color name="Gris">#C1C1C1</color>
+    <color name="White">#FFFFFF</color>
+</resources>

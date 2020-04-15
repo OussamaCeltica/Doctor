@@ -1,0 +1,146 @@
+<resources>
+        <string name = "app_name"> Doctor </string>
+
+        <!-- String Accueil ... -->
+        <string name = "accueil_maladie"> Diseases </string>
+        <string name = "accueil_diag"> Diagnosis </string>
+        <string name = "accueil_guide"> Guide </string>
+        <string name="accueil_nutrition">Nutrition</string>
+
+       <!-- String des maladies ... -->
+        <string name = "maladies_listeHint"> - List of Diseases- </string>
+        <string name = "maladies_searchHint"> Enter the name of a disease .. </string>
+
+       <!-- String des Diagnostique ... -->
+        <string name = "diag_slogan"> You are suffering from something! you feel uncomfortable! take the test now. </string>
+        <string name = "diag_symptome"> Symptoms </string>
+        <string name = "diag_location"> Localization of pain </string>
+        <string name = "diag_sexe"> Gender: </string>
+        <string name = "diag_sexeMale"> Male </string>
+        <string name = "diag_sexeFemale"> Female </string>
+        <string name = "diag_result"> Result </string>
+        <string name = "diag_ageHint"> Give the patient\'s year of birth. </string>
+        <string name = "diag_BodyLocationHint"> Find the location of the pain. </string>
+        <string name = "diag_SymptomesHint"> Search for a symptom .. </string>
+        <string name = "diag_NoLocation"> You must first choose a location for the pain. </string>
+
+
+        <!-- String des MaladieDEscription ... -->
+        <string name = "malDesc_resume"> - Summary Description- </string>
+        <string name = "malDesc_desc"> - Full Description- </string>
+        <string name = "malDesc_condition"> - Medical Condition- </string>
+        <string name = "malDesc_symptomes"> - Possible Symptom- </string>
+        <string name = "malDesc_traitement"> - Treatment- </string>
+
+
+       <!-- String des résultat de test ... -->
+        <string name = "result_hint"> - Test result- </string>
+        <string name = "result_maladieHint"> - Illness- </string>
+        <string name = "divResult_maladieHint"> Illness: </string>
+        <string name = "divResult_probaHint"> probability: </string>
+        <string name = "divResult_specHint"> Specialization: </string>
+        <string name = "divResult_maladieInfoButt"> Show more details </string>
+
+        <!-- Nurition thong ... -->
+        <string name = "nutrition_label"> -Nutrient- </string>
+        <string name = "nutrition_recetteLabel"> Recipe </string>
+        <string name = "nutrition_recetteNutri"> Rcette by Nutrients </string>
+        <string name = "nutrition_recetteIngr"> Recipe by Ingredients </string>
+        <string name = "nutrition_nutriLabel"> Nutrient </string>
+        <string name = "nutrition_ingrNutri"> Nutrients in an Ingredient </string>
+        <string name = "nutrition_diverLabel"> Miscellaneous </string>
+        <string name = "nutrition_quickAnswer"> Quick Response </string>
+        <string name = "divNutriVal_minHint"> Minimum value: </string>
+        <string name = "divNutriVal_maxHint"> Maximum value: </string>
+        <string name = "divNutriVal_valHint"> Give a value .. </string>
+        <string name = "recetteNutri_listeNutriHint"> List of Nutrients </string>
+
+        <string name = "divRecetteNutri_titre"> Title: </string>
+        <string name = "divRecetteNutri_calorie"> Calories: </string>
+        <string name = "divRecetteNutri_fat"> Bold: </string>
+        <string name = "divRecetteNutri_carb"> Carbohydrates: </string>
+        <string name = "divRecetteNutri_butt"> Show recipe </string>
+        <string name = "divRecetteNutri_protein"> Protein: </string>
+
+        <!-- Ingredient thong ... -->
+        <string name = "recetteIngr_inpHint"> Give a list of ingredients separated by commas eg sugar, flour, egg, ... etc </string>
+        <string name = "recetteIngr_excludeIngrHint"> Give a list of ingredients separated by commas which you want not to be in the recipe ex: sugar, flour, egg, ... etc </string>
+        <string name = "recetteIngr_intoleransListe"> List of intolerances </string>
+        <string name = "recetteIngr_includeIng"> Ingredients included: </string>
+        <string name = "recetteIngr_excludeIngr"> Ingredients excluded: </string>
+
+
+        <!-- Recipe Destail String ... -->
+        <string name = "recetteHint"> -Recipes- </string>
+        <string name = "recetteDetail_recetteHint"> - Recipe- </string>
+        <string name = "recetteDetail_ingr"> <u> Ingredients: </u>. </string>
+        <string name = "recetteDetail_healthscore"> <u> Health score: </u>. </string>
+        <string name = "recetteDetail_src"> <u> Source: </u>. </string>
+        <string name = "recetteDetail_ready"> <u> ready: </u>. </string>
+
+        <!-- Recipe Destail String ... -->
+        <string name = "quickResponce_hint"> - Quick Response- </string>
+        <string name = "quickResponce_result"> - Result- </string>
+        <string name = "quickResponce_inpHint"> Ask a simple question about nutrients eg: how many calories in 2 apples .. </string>
+        <string name = "quickResponce_inpLabel"> Question: </string>
+
+        <string name = "title_activity_scrolling"> ScrollingActivity </string>
+
+        <string name = "action_settings"> Settings </string>
+
+
+    <string-array name="intolerance_liste">
+        <item>Dairy</item>
+        <item>Egg</item>
+        <item>Grain</item>
+        <item>Peanut</item>
+        <item>Seafood</item>
+        <item>Sesame</item>
+        <item>Shellfish</item>
+        <item>Soy</item>
+        <item>Sulfite</item>
+        <item>Tree Nut</item>
+        <item>Wheat</item>
+
+    </string-array>
+
+    <string-array name="nutriments_liste">
+        <item>Carbs</item>
+        <item>Protein</item>
+        <item>Calories</item>
+        <item>Fat</item>
+        <item>Alcohol</item>
+        <item>Caffeine</item>
+        <item>Copper</item>
+        <item>Calcium</item>
+        <item>Choline</item>
+        <item>Cholesterol</item>
+        <item>Fluoride</item>
+        <item>SaturatedFat</item>
+        <item>VitaminA</item>
+        <item>VitaminC</item>
+        <item>VitaminD</item>
+        <item>VitaminE</item>
+        <item>VitaminK</item>
+        <item>VitaminB1</item>
+        <item>VitaminB2</item>
+        <item>VitaminB3</item>
+        <item>VitaminB5</item>
+        <item>VitaminB6</item>
+        <item>VitaminB12</item>
+        <item>Fiber</item>
+        <item>Folate</item>
+        <item>FolicAcid</item>
+        <item>Iodine</item>
+        <item>Iron</item>
+        <item>Magnesium</item>
+        <item>Manganese</item>
+        <item>Phosphorus</item>
+        <item>Potassium</item>
+        <item>Selenium</item>
+        <item>Sodium</item>
+        <item>Sugar</item>
+        <item>Zinc</item>
+
+    </string-array>
+</resources>

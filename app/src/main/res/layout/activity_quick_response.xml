@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/VertBlanc"
+    tools:context=".Food.NutritionActivity">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        >
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+
+            app:expandedTitleGravity="center"
+            android:gravity="center"
+            app:titleTextColor="@color/White"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.5"
+                android:gravity="center"
+                android:background="@color/VertBlanc"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:background="@color/VertFance"
+                    android:gravity="center"
+                    android:text="Doctor"
+                    android:textColor="@color/White"
+                    android:textSize="37sp"
+                    app:fontFamily="@font/sanchezz" />
+
+
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+
+                app:layout_collapseMode="pin"
+                />
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingRight="15dp"
+            android:paddingLeft="15dp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/VertBlanc"
+                android:text="@string/quickResponce_hint"
+                android:textColor="@color/Gris"
+                android:textSize="24sp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/VertBlanc"
+                android:layout_marginLeft="13dp"
+                android:longClickable="true"
+                android:focusable="true"
+                android:textIsSelectable="true"
+                android:textColor="@color/VertFance"
+                android:textSize="17sp"
+                android:text="@string/quickResponce_inpLabel"
+                />
+            <EditText
+                android:id="@+id/quickResp_inp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="200dp"
+                android:padding="15dp"
+                android:hint="@string/quickResponce_inpHint"
+                android:background="@drawable/bg_symp_item"
+                android:gravity="top" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/VertBlanc"
+                android:text="@string/quickResponce_result"
+                android:textColor="@color/Gris"
+                android:textSize="24sp"
+                />
+
+            <TextView
+                android:id="@+id/quickResp_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                 android:background="@color/VertBlanc"
+                android:longClickable="true"
+                android:focusable="true"
+                android:textIsSelectable="true"
+                android:textColor="@color/VertFance"
+                android:textSize="17sp"
+                android:text=""
+                />
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/quickResp_resultButt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="23dp"
+                app:cardBackgroundColor="@color/VertFance">
+
+                <LinearLayout
+                    android:layout_width="180dp"
+                    android:layout_height="44dp"
+                    android:paddingLeft="39dp"
+                    android:paddingRight="29dp"
+                    android:gravity="center|left"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/asap"
+                        android:textColor="@color/White"
+                        android:textSize="17sp"
+                        android:text="@string/diag_result"/>
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/result" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
