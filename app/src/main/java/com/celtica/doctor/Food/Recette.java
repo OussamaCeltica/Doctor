@@ -65,7 +65,7 @@ public class Recette {
     public static void getRecetteByIngredient(ArrayList<Ingredient> ingredients,ArrayList<Ingredient> excludeIngr,ArrayList<String> intolerances, PostServerRequest5.doBeforAndAfterGettingData callback){
 
         //region formating includeIngredient
-        String request="/recipes/complexSearch?query=&includeIngredients=";
+        String request="/recipes/complexSearch?query=&addRecipeNutrition=true&includeIngredients=";
         for (Ingredient n:ingredients){
             request=request+n.nom+",+";
         }

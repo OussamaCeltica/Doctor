@@ -1,6 +1,7 @@
 package com.celtica.doctor.Food;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,6 +16,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class ResultRecetteActivity extends AppCompatActivity {
+
+    public static String result="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +37,7 @@ public class ResultRecetteActivity extends AppCompatActivity {
         // specify an adapter (see also next example)
         ArrayList<Recette> recettes=new ArrayList<>();
 
-        String result=getIntent().getExtras().getString("result");
+
         final ResultRecetteAdapter mAdapter;
 
         //region config result pour search by nutritions ..
@@ -67,7 +70,34 @@ public class ResultRecetteActivity extends AppCompatActivity {
                 JSONArray r=new JSONArray(result);
                 for (int i=0;i != r.length();i++){
                     JSONObject obj=r.getJSONObject(i);
-                    recettes.add(new Recette(obj.getInt("id"),obj.getString("title"),obj.getString("image")));
+
+                    ArrayList<NutritionInRecette> nutritions=new ArrayList<>();
+                    JSONArray nutriArr=new JSONArray(obj.getJSONObject("nutrition").getString("nutrients"));
+
+
+                    for (int i2=0;i2 != nutriArr.length();i2++){
+                        JSONObject nutriObj=nutriArr.getJSONObject(i2);
+
+
+                        try {
+                            if(nutriObj.getString("title").equals("Calories"))
+                                nutritions.add(new NutritionInRecette(nutriObj.getDouble("amount"),new Nutrition("Calories")));
+                            else if (nutriObj.getString("title").equals("Carbohydrates"))
+                                nutritions.add(new NutritionInRecette(nutriObj.getDouble("amount"),new Nutrition("Carbs")));
+                            else if (nutriObj.getString("title").equals("Fat"))
+                                nutritions.add(1,new NutritionInRecette(nutriObj.getDouble("amount"),new Nutrition("Fat")));
+                            else if (nutriObj.getString("title").equals("Protein"))
+                                nutritions.add(new NutritionInRecette(nutriObj.getDouble("amount"),new Nutrition("Protein")));
+
+                        }catch (JSONException ee){
+                            ee.printStackTrace();
+                        }
+
+
+                    }
+
+                    recettes.add(new Recette(obj.getInt("id"),obj.getString("title"),obj.getString("image"),nutritions));
+
 
                 }
                 mAdapter = new ResultRecetteAdapter(recettes, ResultRecetteActivity.this,RecetteQueryType.PAR_INREDIENT);
@@ -80,5 +110,11 @@ public class ResultRecetteActivity extends AppCompatActivity {
         }
         //endregion
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        result="";
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,62 +9,6 @@
     tools:context=".Food.NutritionActivity">
 
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/app_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fitsSystemWindows="true"
-        >
-
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/toolbar_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
-
-            app:expandedTitleGravity="center"
-            android:gravity="center"
-            app:titleTextColor="@color/White"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:toolbarId="@+id/toolbar">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_collapseMode="parallax"
-                app:layout_collapseParallaxMultiplier="0.5"
-                android:gravity="center"
-                android:background="@color/VertBlanc"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:background="@color/VertFance"
-                    android:gravity="center"
-                    android:text="Doctor"
-                    android:textColor="@color/White"
-                    android:textSize="37sp"
-                    app:fontFamily="@font/sanchezz" />
-
-
-
-            </LinearLayout>
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="15dp"
-
-                app:layout_collapseMode="pin"
-                />
-
-
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-
 
 
     <LinearLayout
@@ -72,6 +16,15 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@color/VertFance"
+            android:gravity="center"
+            android:text="Doctor"
+            android:textColor="@color/White"
+            android:textSize="37sp"
+            app:fontFamily="@font/sanchezz" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -87,14 +40,19 @@
         <ExpandableListView
             android:id="@+id/nutrition_divOption"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             >
-
         </ExpandableListView>
 
     </LinearLayout>
 
-
-
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="ca-app-pub-4807740938253496/9305384770">
+    </com.google.android.gms.ads.AdView>
+</FrameLayout>

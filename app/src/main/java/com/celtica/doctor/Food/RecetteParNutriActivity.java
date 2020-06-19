@@ -1,5 +1,6 @@
 package com.celtica.doctor.Food;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,10 +8,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.util.Log;
 
+import com.celtica.doctor.GlobalVar;
 import com.celtica.doctor.MySpinnerSearchable;
 import com.celtica.doctor.R;
 import com.celtica.doctor.SpinnerItem;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.rewarded.RewardItem;
+import com.google.android.gms.ads.rewarded.RewardedAd;
+import com.google.android.gms.ads.rewarded.RewardedAdCallback;
+import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 
 import java.util.ArrayList;
 
@@ -23,8 +31,10 @@ public class RecetteParNutriActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recette_par_nutri);
 
 
-        ArrayList<NutritionScale> nutriValues=new ArrayList<>();
+        GlobalVar.setRewadedAd(this,"ca-app-pub-4807740938253496/9569996702");
 
+
+        ArrayList<NutritionScale> nutriValues=new ArrayList<>();
 
 
         RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.recetteNutri_divNutri);
@@ -46,7 +56,7 @@ public class RecetteParNutriActivity extends AppCompatActivity {
         mAdapter.notifyDataSetChanged();
         mRecyclerView.setAdapter(mAdapter);
 
-        //Region configuration de la liste des nutrtion
+        //region configuration de la liste des nutrtion
         String[] nutri=getResources().getStringArray(R.array.nutriments_liste);
         ArrayList<SpinnerItem> nutritions=new ArrayList<>();
         for (String n:nutri){

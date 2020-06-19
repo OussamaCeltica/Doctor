@@ -30,6 +30,8 @@ public class QuickResponseActivity extends AppCompatActivity {
         EditText questionInp=(EditText)findViewById(R.id.quickResp_inp);
         TextView resultat=(TextView)findViewById(R.id.quickResp_result);
 
+        GlobalVar.setRewadedAd(this,"ca-app-pub-4807740938253496/9569996702");
+
         questionInp.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {

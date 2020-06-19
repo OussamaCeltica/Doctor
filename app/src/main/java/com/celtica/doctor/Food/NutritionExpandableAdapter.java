@@ -3,11 +3,7 @@ package com.celtica.doctor.Food;
 
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import android.content.Context;
-import android.graphics.Typeface;
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +15,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-import com.celtica.doctor.ExpandableItem;
+import com.celtica.doctor.Diagnosis.ExpandableItem;
 import com.celtica.doctor.R;
 
 public class NutritionExpandableAdapter extends BaseExpandableListAdapter {

@@ -1,159 +1,235 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- Use DrawerLayout as root container for activity -->
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:fitsSystemWindows="false"
+
     tools:context=".Accueil">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="@color/VertFance"
-        android:gravity="center"
-        android:text="Doctor"
-        android:textColor="@color/White"
-        android:textSize="37sp"
-        app:fontFamily="@font/sanchezz" />
+    <!-- (Le div qui contient le body avec le header) Layout to contain contents of main body of screen (drawer will slide over this) -->
 
-    <LinearLayout
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:background="@color/VertBlanc"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:context=".Accueil">
 
-
-        <TextView
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1.2"/>
+            android:layout_height="80dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@color/VertFance"
+                android:gravity="center"
+                android:text="Doctor"
+                android:textColor="@color/White"
+                android:textSize="37sp"
+                app:fontFamily="@font/sanchezz" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/maladiesButt"
-            android:layout_width="180dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:cardCornerRadius="16dp"
-            app:cardBackgroundColor="@color/VertFance"
-            app:cardElevation="1dp"
-            android:layout_gravity="center"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:clickable="true">
+            <ImageView
+                android:id="@+id/drawerButt"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp"
+                android:layout_gravity="center|left"
+                android:scaleType="fitXY"
+                android:src="@drawable/menu" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="20dp"
-                android:gravity="center">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:layout_weight="1"
-                    android:src="@drawable/virus" />
+                android:gravity="center"
+                android:background="@color/VertBlanc"
+                android:orientation="vertical">
+
+
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/sanchezz"
-                    android:textAlignment="center"
-                    android:textColor="@color/White"
-                    android:textSize="20sp"
-                    android:text="@string/accueil_maladie" />
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/maladiesButt"
+                    android:layout_width="180dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="16dp"
+                    app:cardBackgroundColor="@color/VertFance"
+                    app:cardElevation="1dp"
+                    android:layout_gravity="center"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp"
+                        android:gravity="center">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY"
+                            android:layout_weight="1"
+                            android:src="@drawable/virus" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sanchezz"
+                            android:textAlignment="center"
+                            android:textColor="@color/White"
+                            android:textSize="20sp"
+                            android:text="@string/accueil_maladie" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.3"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/diagButt"
+                    android:layout_width="180dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="16dp"
+                    app:cardBackgroundColor="@color/VertFance"
+                    app:cardElevation="1dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:layout_gravity="center">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp"
+                        android:gravity="center">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY"
+                            android:layout_weight="1"
+                            android:src="@drawable/diag" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sanchezz"
+                            android:textAlignment="center"
+                            android:textColor="@color/White"
+                            android:textSize="20sp"
+                            android:text="@string/accueil_diag" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.3"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/nutritionButt"
+                    android:layout_width="180dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="16dp"
+                    app:cardBackgroundColor="@color/VertFance"
+                    app:cardElevation="1dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:layout_gravity="center">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp"
+                        android:gravity="center">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY"
+                            android:layout_weight="1"
+                            android:src="@drawable/nutrition" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sanchezz"
+                            android:textAlignment="center"
+                            android:textColor="@color/White"
+                            android:textSize="20sp"
+                            android:text="@string/accueil_nutrition" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"/>
+
+
+
 
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1.3"/>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/diagButt"
-            android:layout_width="180dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:cardCornerRadius="16dp"
-            app:cardBackgroundColor="@color/VertFance"
-            app:cardElevation="1dp"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:layout_gravity="center">
-            <LinearLayout
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="20dp"
-                android:gravity="center">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:layout_weight="1"
-                    android:src="@drawable/diag" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/sanchezz"
-                    android:textAlignment="center"
-                    android:textColor="@color/White"
-                    android:textSize="20sp"
-                    android:text="@string/accueil_diag" />
+                android:layout_height="wrap_content"
+                ads:adSize="BANNER"
+                ads:adUnitId="ca-app-pub-4807740938253496/9305384770">
+            </com.google.android.gms.ads.AdView>
 
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1.3"/>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/nutritionButt"
-            android:layout_width="180dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:cardCornerRadius="16dp"
-            app:cardBackgroundColor="@color/VertFance"
-            app:cardElevation="1dp"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:layout_gravity="center">
-            <LinearLayout
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="20dp"
-                android:gravity="center">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:layout_weight="1"
-                    android:src="@drawable/nutrition" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/sanchezz"
-                    android:textAlignment="center"
-                    android:textColor="@color/White"
-                    android:textSize="20sp"
-                    android:text="@string/accueil_nutrition" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                ads:adSize="BANNER"
+                ads:adUnitId="ca-app-pub-4807740938253496/9305384770">
+            </com.google.android.gms.ads.AdView>
 
-            </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1.2"/>
-
+        </FrameLayout>
 
 
 
     </LinearLayout>
 
-</LinearLayout>
+
+    <!-- Container for contents of drawer - use NavigationView to make configuration easier -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:fitsSystemWindows="true"
+        android:layoutDirection="ltr"
+        app:itemTextColor="@color/VertFance"
+        app:headerLayout="@layout/drawer_header"
+
+        app:menu="@menu/drawer_menu"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>
+
+

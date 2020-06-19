@@ -28,6 +28,11 @@ import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
 import com.celtica.doctor.Food.NutritionScale;
 import com.celtica.doctor.R;
+import com.google.android.ads.nativetemplates.NativeTemplateStyle;
+import com.google.android.ads.nativetemplates.TemplateView;
+import com.google.android.gms.ads.AdLoader;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.formats.UnifiedNativeAd;
 
 import java.util.ArrayList;
 
@@ -70,6 +75,10 @@ public class ResultRecetteAdapter extends RecyclerView.Adapter<RecyclerView.View
 
     public static class RecetteIngrView extends RecyclerView.ViewHolder  {
         public TextView titre;
+        public TextView calorie;
+        public TextView fat;
+        public TextView carbs;
+        public TextView protein;
 
         ImageView img;
         LinearLayout detailButt;
@@ -77,82 +86,130 @@ public class ResultRecetteAdapter extends RecyclerView.Adapter<RecyclerView.View
         public RecetteIngrView(View v) {
             super(v);
             titre=(TextView)v.findViewById(R.id.divRecetteNutri_titre);
-
+            calorie=(TextView)v.findViewById(R.id.divRecetteNutri_calorie);
+            fat=(TextView) v.findViewById(R.id.divRecetteNutri_fat);
+            carbs=(TextView) v.findViewById(R.id.divRecetteNutri_carb);
+            protein=(TextView) v.findViewById(R.id.divRecetteNutri_protein);
             img=(ImageView) v.findViewById(R.id.divRecetteNutri_img);
             detailButt=(LinearLayout) v.findViewById(R.id.divRecetteNutri_butt);
         }
     }
 
 
+    public static class AdsView extends RecyclerView.ViewHolder  {
+        public TemplateView adsView;
+        LinearLayout body;
+
+        public AdsView(View v) {
+            super(v);
+            adsView=(TemplateView) v.findViewById(R.id.adView);
+            // body=(LinearLayout)v.findViewById(R.id.DivMaladie_body);
+
+
+
+        }
+    }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        if (recetteQueryType == RecetteQueryType.PAR_NUTRITION){
-            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.div_recette,parent,false);
-            RecetteView vh = new RecetteView(v);
-            return vh;
+        if (viewType == 1){
+            if (recetteQueryType == RecetteQueryType.PAR_NUTRITION){
+                View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.div_recette,parent,false);
+                RecetteView vh = new RecetteView(v);
+                return vh;
+            }else {
+                View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.div_recette_ingr,parent,false);
+                RecetteIngrView vh = new RecetteIngrView(v);
+                return vh;
+            }
         }else {
-            View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.div_recette_ingr,parent,false);
-            RecetteIngrView vh = new RecetteIngrView(v);
+            View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.div_recette_ads,parent,false);
+            AdsView vh = new AdsView(v);
             return vh;
         }
-
-
-
     }
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
 
-        if(recetteQueryType == RecetteQueryType.PAR_NUTRITION){
-            ((RecetteView)holder).titre.setText(recettes.get(position).nom+"");
-            //il faut garder l ordre lors d ajout des ingredient au recette ..
-            ((RecetteView)holder).calorie.setText(recettes.get(position).nutritionInRecettes.get(0).value+"");
-            ((RecetteView)holder).carbs.setText(recettes.get(position).nutritionInRecettes.get(1).value+"g");
-            ((RecetteView)holder).fat.setText(recettes.get(position).nutritionInRecettes.get(2).value+"g");
-            ((RecetteView)holder).protein.setText(recettes.get(position).nutritionInRecettes.get(3).value+"g");
+        if(position % 6 == 0 && position != 0){
+            AdLoader adLoader = new AdLoader.Builder(c, "ca-app-pub-4807740938253496/5604801156")
+                    .forUnifiedNativeAd(new UnifiedNativeAd.OnUnifiedNativeAdLoadedListener() {
+                        @Override
+                        public void onUnifiedNativeAdLoaded(UnifiedNativeAd unifiedNativeAd) {
+                            NativeTemplateStyle styles = new
+                                    NativeTemplateStyle.Builder().build();
 
-            //region config recette image
-            Glide.with(c)
-                    .load(recettes.get(position).imgUrl)
-                    .thumbnail(Glide.with(c).load(R.drawable.wait))
-                    .apply(new RequestOptions().override(600, 400))
-                    .error(Glide.with(c).load(R.drawable.err_img))
-                    .into(((RecetteView)holder).img);
-            //endregion
 
-            ((RecetteView)holder).detailButt.setOnClickListener((view -> {
-                DetailRecetteActivity.recette=recettes.get(position);
-                c.startActivity(new Intent(c,DetailRecetteActivity.class));
-            }));
+                            ((AdsView)holder).adsView.setStyles(styles);
+                            ((AdsView)holder).adsView.setNativeAd(unifiedNativeAd);
+
+                        }
+                    })
+                    .build();
+
+            adLoader.loadAd(new AdRequest.Builder().build());
+
         }else {
-            ((RecetteIngrView)holder).titre.setText(recettes.get(position).nom+"");
+            if(recetteQueryType == RecetteQueryType.PAR_NUTRITION){
+                ((RecetteView)holder).titre.setText(recettes.get(position-(position/6)).nom+"");
+                //il faut garder l ordre lors d ajout des ingredient au recette ..
+                ((RecetteView)holder).calorie.setText(recettes.get(position-(position/6)).nutritionInRecettes.get(0).value+"");
+                ((RecetteView)holder).carbs.setText(recettes.get(position-(position/6)).nutritionInRecettes.get(1).value+"g");
+                ((RecetteView)holder).fat.setText(recettes.get(position-(position/6)).nutritionInRecettes.get(2).value+"g");
+                ((RecetteView)holder).protein.setText(recettes.get(position-(position/6)).nutritionInRecettes.get(3).value+"g");
 
-            //region config recette image
-            Glide.with(c)
-                    .load(recettes.get(position).imgUrl)
-                    .thumbnail(Glide.with(c).load(R.drawable.wait))
-                    .apply(new RequestOptions().override(600, 400))
-                    .error(Glide.with(c).load(R.drawable.err_img))
-                    .into(((RecetteIngrView)holder).img);
-            //endregion
+                //region config recette image
+                Glide.with(c)
+                        .load(recettes.get(position-(position/6)).imgUrl)
+                        .thumbnail(Glide.with(c).load(R.drawable.wait4))
+                        .apply(new RequestOptions().override(600, 400))
+                        .error(Glide.with(c).load(R.drawable.err_img))
+                        .into(((RecetteView)holder).img);
+                //endregion
 
-            ((RecetteIngrView)holder).detailButt.setOnClickListener((view -> {
-                DetailRecetteActivity.recette=recettes.get(position);
-                c.startActivity(new Intent(c,DetailRecetteActivity.class));
-            }));
+                ((RecetteView)holder).detailButt.setOnClickListener((view -> {
+                    DetailRecetteActivity.recette=recettes.get(position-(position/6));
+                    c.startActivity(new Intent(c,DetailRecetteActivity.class));
+                }));
+            }else {
+                ((RecetteIngrView)holder).titre.setText(recettes.get(position-(position/6)).nom+"");
+                ((RecetteIngrView)holder).calorie.setText(recettes.get(position-(position/6)).nutritionInRecettes.get(0).value+"");
+                ((RecetteIngrView)holder).carbs.setText(recettes.get(position-(position/6)).nutritionInRecettes.get(1).value+"g");
+                ((RecetteIngrView)holder).fat.setText(recettes.get(position-(position/6)).nutritionInRecettes.get(2).value+"g");
+                ((RecetteIngrView)holder).protein.setText(recettes.get(position-(position/6)).nutritionInRecettes.get(3).value+"g");
 
+                //region config recette image
+                Glide.with(c)
+                        .load(recettes.get(position-(position/6)).imgUrl)
+                        .thumbnail(Glide.with(c).load(R.drawable.wait4))
+                        .apply(new RequestOptions().override(600, 400))
+                        .error(Glide.with(c).load(R.drawable.err_img))
+                        .into(((RecetteIngrView)holder).img);
+                //endregion
+
+                ((RecetteIngrView)holder).detailButt.setOnClickListener((view -> {
+                    DetailRecetteActivity.recette=recettes.get(position-(position/6));
+                    c.startActivity(new Intent(c,DetailRecetteActivity.class));
+                }));
+
+            }
         }
 
     }
 
 
+    @Override
+    public int getItemViewType(int position) {
+        if(position % 6 == 0 && position !=0) return 2;
+        else return 1;
+    }
 
     @Override
     public int getItemCount() {
-        return recettes.size();
+        return recettes.size()+(recettes.size()/6);
     }
 
 }

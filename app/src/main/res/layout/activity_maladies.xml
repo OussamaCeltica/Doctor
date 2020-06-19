@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:background="@color/VertBlanc"
-    tools:context=".MaladiesActivity">
+    tools:context=".Diagnosis.MaladiesActivity">
 
 
     <com.google.android.material.appbar.AppBarLayout

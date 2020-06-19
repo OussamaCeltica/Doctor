@@ -24,7 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="190dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/wait"/>
+                android:src="@drawable/wait4"/>
 
 
             <LinearLayout
@@ -48,6 +48,85 @@
                     android:text="Recette de Mojito Maginto Blanc Red" />
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/Gris"
+                    android:text="@string/divRecetteNutri_calorie" />
+                <TextView
+                    android:id="@+id/divRecetteNutri_calorie"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/White"
+                    android:text="Recette de Mojito Maginto Blanc Red" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/Gris"
+                    android:text="@string/divRecetteNutri_carb" />
+                <TextView
+                    android:id="@+id/divRecetteNutri_carb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/White"
+                    android:text="Recette de Mojito Maginto Blanc Red" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/Gris"
+                    android:text="@string/divRecetteNutri_fat" />
+                <TextView
+                    android:id="@+id/divRecetteNutri_fat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/White"
+                    android:text="Recette de Mojito Maginto Blanc Red" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/Gris"
+                    android:text="@string/divRecetteNutri_protein" />
+                <TextView
+                    android:id="@+id/divRecetteNutri_protein"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/White"
+                    android:text="Proteine" />
+            </LinearLayout>
 
 
             <LinearLayout

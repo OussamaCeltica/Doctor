@@ -7,6 +7,11 @@
     <string name="accueil_guide">Guide</string>
     <string name="accueil_nutrition">Nutrition</string>
 
+    <string name="drawer_stats">Statistiques</string>
+    <string name="drawer_paiment">Paiment</string>
+    <string name="drawer_guide">Guide</string>
+    <string name="drawer_contact">Contacter-nous</string>
+
     <!-- String des maladies ... -->
     <string name="maladies_listeHint">-Liste des Maladies-</string>
     <string name="maladies_searchHint">Saisir le nom d\'une maladie ..</string>

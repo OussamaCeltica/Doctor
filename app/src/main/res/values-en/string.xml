@@ -7,6 +7,11 @@
         <string name = "accueil_guide"> Guide </string>
         <string name="accueil_nutrition">Nutrition</string>
 
+    <string name="drawer_stats">Statistics</string>
+    <string name="drawer_paiment">Payment</string>
+    <string name="drawer_guide">Guide</string>
+    <string name="drawer_contact">Contact-us</string>
+
        <!-- String des maladies ... -->
         <string name = "maladies_listeHint"> - List of Diseases- </string>
         <string name = "maladies_searchHint"> Enter the name of a disease .. </string>
@@ -58,7 +63,7 @@
         <string name = "divRecetteNutri_titre"> Title: </string>
         <string name = "divRecetteNutri_calorie"> Calories: </string>
         <string name = "divRecetteNutri_fat"> Bold: </string>
-        <string name = "divRecetteNutri_carb"> Carbohydrates: </string>
+        <string name = "divRecetteNutri_carb"> Carbs: </string>
         <string name = "divRecetteNutri_butt"> Show recipe </string>
         <string name = "divRecetteNutri_protein"> Protein: </string>
 

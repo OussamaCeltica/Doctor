@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:padding="10dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:paddingLeft="50dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <pl.droidsonroids.gif.GifImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="20dp"
+                android:layout_gravity="center"
+                android:id="@+id/dancer"
+                android:src="@drawable/wait" />
+
+            <TextView
+                android:id="@+id/divWaitAds_msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="19sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="Loading ...." />
+
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="30dp"
+            android:background="@color/VertFance" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+           >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:background="@color/Gris"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:textSize="29sp"
+                android:textColor="@color/White"
+                android:text="Ads" />
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/divWaitAds_ad"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                ads:adSize="SMART_BANNER"
+                ads:adUnitId="ca-app-pub-4807740938253496/3219361680">
+            </com.google.android.gms.ads.AdView>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

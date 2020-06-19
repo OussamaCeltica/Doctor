@@ -3,23 +3,28 @@
     package="com.celtica.doctor">
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".Food.QuickResponseActivity"></activity>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".TestActivity"></activity>
+        <activity android:name=".Accueil" />
+        <activity android:name=".InstructionActivity" /> <!-- Sample AdMob App ID: ca-app-pub-xxxxxxxxx -->
+        <activity android:name=".Food.QuickResponseActivity" />
         <activity android:name=".Food.DetailRecetteActivity" />
         <activity android:name=".Food.ResultRecetteActivity" />
         <activity android:name=".Food.RecetteParNutriActivity" />
         <activity android:name=".Food.RecetteIngredientActivity" />
         <activity android:name=".Food.NutritionActivity" />
-        <activity android:name=".DiagnoResultActivity" />
-        <activity android:name=".MaladieDescription" />
-        <activity android:name=".DiagnostiqueActivtity" />
-        <activity android:name=".MaladiesActivity" />
-        <activity android:name=".Accueil">
+        <activity android:name=".Diagnosis.DiagnoResultActivity" />
+        <activity android:name=".Diagnosis.MaladieDescription" />
+        <activity android:name=".Diagnosis.DiagnostiqueActivtity" />
+        <activity android:name=".Diagnosis.MaladiesActivity" />
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,10 +33,14 @@
         </activity>
 
         <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-4807740938253496~6092063929" />
+        <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
-
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
 </manifest>

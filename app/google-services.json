@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "190894298537",
+    "firebase_url": "https://doctor-c159b.firebaseio.com",
+    "project_id": "doctor-c159b",
+    "storage_bucket": "doctor-c159b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:190894298537:android:20f438b77ca5bdf3cc20b8",
+        "android_client_info": {
+          "package_name": "com.celtica.doctor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "190894298537-9lgrqa98e67502vsickmfv22r1jc0fnf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBONQZwWlhxf9Wef944MgCWzzXqpDS21iY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "190894298537-9lgrqa98e67502vsickmfv22r1jc0fnf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -6,10 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ExpandableListView;
-import android.widget.Toast;
 
-import com.celtica.doctor.ExpandableItem;
+import com.celtica.doctor.Diagnosis.ExpandableItem;
 import com.celtica.doctor.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import java.util.ArrayList;
 
@@ -24,6 +25,13 @@ public class NutritionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nutrition);
         expandableListView = (ExpandableListView) findViewById(R.id.nutrition_divOption);
+
+
+        //region congig baniere admob
+        AdView mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+        //endregion
 
 
         ArrayList<String> recipe=new ArrayList<>();

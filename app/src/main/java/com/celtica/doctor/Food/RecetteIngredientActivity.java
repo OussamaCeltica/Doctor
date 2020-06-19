@@ -35,6 +35,8 @@ public class RecetteIngredientActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recette_ingredient);
 
+        GlobalVar.setRewadedAd(this,"ca-app-pub-4807740938253496/9569996702");
+
         ingredientInp=(EditText)findViewById(R.id.recetteIng_inp);
         excludeIngrInp=(EditText)findViewById(R.id.recetteIngr_excludeIngrHint);
         listIntoleranceView=(FlexboxLayout)findViewById(R.id.recetteIngr_divIntolerance);
@@ -95,25 +97,26 @@ public class RecetteIngredientActivity extends AppCompatActivity {
 
                     @Override
                     public void echec(Exception e) {
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
+                        runOnUiThread(()-> {
                                 progress.dismiss();
                                 Toast.makeText(getApplicationContext(),"No Internet ...",Toast.LENGTH_LONG).show();
-                            }
+
                         });
                     }
 
                     @Override
                     public void After(String result) {
-                        progress.dismiss();
+                        runOnUiThread(()-> {
+                            progress.dismiss();
+
+                        });
 
                         try {
                             JSONObject obj=new JSONObject(result);
                             Intent i=new Intent(RecetteIngredientActivity.this, ResultRecetteActivity.class);
-                            i.putExtra("result",obj.getString("results"));
+
+                            ResultRecetteActivity.result=obj.getString("results");
                             i.putExtra("query","ingredient");
-                            Log.e("rrrr",obj.getString("results"));
                             startActivity(i);
                         } catch (JSONException e) {
                             e.printStackTrace();

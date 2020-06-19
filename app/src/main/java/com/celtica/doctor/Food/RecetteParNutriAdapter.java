@@ -94,7 +94,6 @@ public class RecetteParNutriAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 
         if(position == nutritions.size()){
 
-
             //region click the buttopn for result ..
             ((NutriResutlButtView)holder).resultButt.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -130,7 +129,7 @@ public class RecetteParNutriAdapter extends RecyclerView.Adapter<RecyclerView.Vi
                         public void After(String result) {
                             progress.dismiss();
                             Intent i=new Intent(c, ResultRecetteActivity.class);
-                            i.putExtra("result",result+"");
+                            ResultRecetteActivity.result=result;
                             i.putExtra("query","nutrition");
                             c.startActivity(i);
 
